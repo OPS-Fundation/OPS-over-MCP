@@ -48,6 +48,31 @@ Reference:
 👉 https://op-foundation.org/en/
 
 
+## Conceptual Architecture
++------------------+
+|   MCP Client     |
++------------------+
+        |
+        |  ops.render (MCP tool)
+        v
++------------------+
+|   OPS MCP Server |
+|------------------|
+| - Resolve imports|
+| - Apply policies |
+| - Optimize ctx   |
+| - Render prompt  |
++------------------+
+        |
+        v
++------------------+
+|   LLM / Agent    |
++------------------+
+
+
+**MCP transports the request.**
+**OPS governs the prompt content.**
+
 ---
 
 ## Why OPS over MCP?
