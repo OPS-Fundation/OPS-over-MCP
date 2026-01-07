@@ -1,4 +1,25 @@
-# OPS-over-MCP
+# OPS-over-MCP READme Quickstart
+
+## Quickstart (Python stdio)
+
+### 1) Install
+```bash
+pip install "mcp[cli]"
+
+2) Run the server (stdio)
+python server/mcp_ops_server.py
+
+3) Run the demo client
+python client/demo_client.py
+
+```
+---
+
+
+
+
+
+# OPS-over-MCP READme
 MCP + OPS: An Example of OPS-over-MCP (Standardized, Reusable Prompt Context)
 
 # MCP + OPS: An Example of OPS-over-MCP  
