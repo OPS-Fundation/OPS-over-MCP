@@ -1,0 +1,22 @@
+{
+  "name": "ops.render",
+  "description": "Resolve imports, apply policy, optimize context, and render prompt messages.",
+  "inputSchema": {
+    "type": "object",
+    "required": ["ref", "variables"],
+    "properties": {
+      "ref": { "type": "string" },
+      "variables": { "type": "object" },
+      "options": {
+        "type": "object",
+        "properties": {
+          "token_budget": { "type": "integer" },
+          "format": { "type": "string", "enum": ["messages", "text"] },
+          "redact": { "type": "boolean", "default": true },
+          "include_lineage": { "type": "boolean", "default": true },
+          "cache": { "type": "string", "enum": ["use", "bypass"], "default": "use" }
+        }
+      }
+    }
+  }
+}
