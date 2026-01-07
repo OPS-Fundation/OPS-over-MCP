@@ -1,0 +1,14 @@
+{
+  "ops_version": "0.1",
+  "id": "ops.shared.safety.no_pii",
+  "title": "Safety: No PII",
+  "description": "Basic policy layer to avoid personal data leakage.",
+  "version": "1.0.3",
+  "license": "Apache-2.0",
+  "policy": {
+    "redactions": ["EMAIL", "PHONE", "ADDRESS"]
+  },
+  "templates": {
+    "developer": "Safety: do not output personal contact details unless explicitly provided by the user."
+  }
+}
