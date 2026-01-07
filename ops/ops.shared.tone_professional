@@ -1,0 +1,11 @@
+{
+  "ops_version": "0.1",
+  "id": "ops.shared.tone_professional",
+  "title": "Professional Tone",
+  "description": "Reusable tone rules for professional communication.",
+  "version": "1.1.0",
+  "license": "Apache-2.0",
+  "templates": {
+    "developer": "Tone: professional, warm, and direct. Avoid hype. Keep it short."
+  }
+}
