@@ -1,0 +1,54 @@
+{
+  "ops_version": "0.1",
+  "id": "ops.lead_outreach",
+  "title": "Lead Outreach - B2B",
+  "description": "Reusable prompt bundle for outreach personalization.",
+  "version": "1.2.0",
+  "license": "Apache-2.0",
+  "authors": ["OP Foundation Community"],
+  "tags": ["sales", "email", "personalization"],
+
+  "imports": [
+    { "ref": "ops.shared.tone_professional@1.x" },
+    { "ref": "ops.shared.safety.no_pii@>=1.0.0" }
+  ],
+
+  "variables_schema": {
+    "type": "object",
+    "required": ["lead_name", "company", "role", "value_prop"],
+    "properties": {
+      "lead_name": { "type": "string" },
+      "company": { "type": "string" },
+      "role": { "type": "string" },
+      "value_prop": { "type": "string" },
+      "context_snippets": { "type": "array", "items": { "type": "string" } }
+    }
+  },
+
+  "policy": {
+    "redactions": ["EMAIL", "PHONE", "ADDRESS"],
+    "allowed_sources": ["user_input", "crm", "public_web"],
+    "safety_mode": "standard"
+  },
+
+  "templates": {
+    "system": "You are a concise B2B outreach assistant. Follow tone and safety policies.",
+    "developer": "Goal: write a short outreach email. Use provided facts only. Avoid hallucinations.",
+    "user": [
+      "Lead: {{lead_name}} ({{role}} at {{company}})",
+      "Value proposition: {{value_prop}}",
+      "Context snippets:\n{{#each context_snippets}}- {{this}}\n{{/each}}",
+      "Write a cold email with: subject + 4-6 lines body + CTA."
+    ]
+  },
+
+  "optimization": {
+    "dedupe_strategy": "semantic_hash",
+    "token_budget_default": 900,
+    "compression": {
+      "enabled": true,
+      "priority": ["context_snippets", "value_prop"],
+      "method": "extractive"
+    }
+  }
+}
