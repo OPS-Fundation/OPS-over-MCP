@@ -1,0 +1,11 @@
+{
+  "name": "ops.get",
+  "description": "Fetch an OPS package metadata and variable schema.",
+  "inputSchema": {
+    "type": "object",
+    "required": ["ref"],
+    "properties": {
+      "ref": { "type": "string", "description": "e.g. ops.lead_outreach@1.2.0 or ops.lead_outreach@1.x" }
+    }
+  }
+}
