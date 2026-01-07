@@ -5,12 +5,11 @@
   "description": "Reusable prompt bundle for outreach personalization.",
   "version": "1.2.0",
   "license": "Apache-2.0",
-  "authors": ["OP Foundation Community"],
-  "tags": ["sales", "email", "personalization"],
+  "authors": ["OPS Demo"],
 
   "imports": [
     { "ref": "ops.shared.tone_professional@1.x" },
-    { "ref": "ops.shared.safety.no_pii@>=1.0.0" }
+    { "ref": "ops.shared.safety.no_pii@1.x" }
   ],
 
   "variables_schema": {
@@ -21,7 +20,7 @@
       "company": { "type": "string" },
       "role": { "type": "string" },
       "value_prop": { "type": "string" },
-      "context_snippets": { "type": "array", "items": { "type": "string" } }
+      "context_snippets": { "type": "array", "items": { "type": "string" }, "default": [] }
     }
   },
 
@@ -43,12 +42,11 @@
   },
 
   "optimization": {
-    "dedupe_strategy": "semantic_hash",
     "token_budget_default": 900,
     "compression": {
       "enabled": true,
-      "priority": ["context_snippets", "value_prop"],
-      "method": "extractive"
+      "method": "truncate",
+      "priority": ["context_snippets", "value_prop"]
     }
   }
 }
