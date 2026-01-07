@@ -1,0 +1,5 @@
+{
+  "name": "ops.list",
+  "description": "List available OPS packages.",
+  "inputSchema": { "type": "object", "properties": {} }
+}
