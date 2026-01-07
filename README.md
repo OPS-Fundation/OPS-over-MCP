@@ -1,4 +1,4 @@
-# OPS-over-MCP READme Quickstart
+# OPS-over-MCP ReadMe Quickstart
 
 ## Quickstart (Python stdio)
 
@@ -19,7 +19,7 @@ python client/demo_client.py
 
 
 
-# OPS-over-MCP READme
+# OPS-over-MCP ReadMe
 MCP + OPS: An Example of OPS-over-MCP (Standardized, Reusable Prompt Context)
 
 # MCP + OPS: An Example of OPS-over-MCP  
