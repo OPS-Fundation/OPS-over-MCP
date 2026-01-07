@@ -47,6 +47,7 @@ OPS is an open specification designed to:
 Reference:  
 👉 https://op-foundation.org/en/
 
+---
 
 ## Conceptual Architecture
 +------------------+
@@ -70,7 +71,10 @@ Reference:
 +------------------+
 
 
+
+
 **MCP transports the request.**
+
 **OPS governs the prompt content.**
 
 ---
